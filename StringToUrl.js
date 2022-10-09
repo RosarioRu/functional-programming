@@ -30,12 +30,19 @@ function stringToUrl(string) {
 //recursive solution:
 
 function stringToUrlRecursive(string) {
-  if (string === "") {
-    return;
+  if (string === "") { 
+    return; //stop if empty string
   }
-  if ((typeof string) !== "string") {
-    return "Please enter a valid URL";
-  } else {
+  if ((typeof string) !== "string") { 
+    return "Please enter a valid URL"; //stop if non-string entered
+  }
+  if (string.length === 1) { //if string is length of 1, don't return function
+    if (string === " ") {
+      return "%20";
+    } else {
+      return string;
+    }
+  } else { //if 3 terminatin conditions above aren't true: recursion:
     if(string.substring(0,1) === " " ) {
       return "%20" + stringToUrlRecursive(string.substring(1));
     } else {
