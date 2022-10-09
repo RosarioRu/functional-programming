@@ -9,60 +9,19 @@ Input: "Jasmine Ann Jones"
 Output: "Jasmine%20Ann%20Jones"
 */
 
-function stringToUrl(string) {
-
-  let urlString = "";
-
-  for(i = 0; i<string.length; i++) {
-    if (string[i] === " ") {
-      urlString"%20");
-    } else {
-      urlString.concat(string[i]);
-    }
-  }
-
-  return urlString;
-
-};
-
 
 function stringToUrl(string) {
-
-  let urlString = "";
-
-  for(i = 0; i<string.length; i++) {
-    if (string[i] === " ") {
-      console.log(urlString);
-      console.log(urlString + "%20");
-      console.log(urlString);
-    } else {
-      console.log(urlString);
-      console.log(urlString + (string[i]));
-      console.log(urlString);
+  if ((typeof string) !== "string") {
+    return "Please enter a valid URL";
+  } else {
+    let urlString = "";
+    for(i = 0; i<string.length; i++) {
+      if (string[i] === " ") {
+        urlString += "%20";
+      } else {
+        urlString += string[i];
+      }
     }
+    return urlString;
   }
-
-  return urlString;
-
-};
-
-//this one below actually saves changes to urlString.
-function stringToUrl(string) {
-
-  let urlString = "";
-
-  for(i = 0; i<string.length; i++) {
-    if (string[i] === " ") {
-      console.log(urlString);
-      urlString += "%20";
-      console.log(urlString);
-    } else {
-      console.log(urlString);
-      urlString += string[i];
-      console.log(urlString);
-    }
-  }
-
-  return urlString;
-
 };
