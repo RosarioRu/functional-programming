@@ -26,6 +26,18 @@ function unduplicating(array) {
   return editedArray;
 };
 
+//non-recursive using filter():
+function unduplicatingWithFilter(array) {
+  let filtered = array.filter((element, index)=> {
+    if (array.indexOf(element) === index) {
+      return element;
+    }
+  })
+  return filtered;
+};
+
+
+
 // recursive solution: not sure how to do this without a global variable!
 let editedArray = [];
 function unduplicatingRecursive(array) {
