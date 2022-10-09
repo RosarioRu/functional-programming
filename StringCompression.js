@@ -19,6 +19,30 @@ Output: "3ab2c4da"
             maybe concat these to an empty string made at the beginning of this loop, then return said string at end.
 */
 
+function stringCompression(string) {
+  let twoDimensionalArray = [];
+  for(let i=0; i<string.length, i++) {
+    if (twoDimensionalArray.includes(string[i])) {
+      console.log("already here");
+    }
+  }
+};
+
+
+function stringCompression(string) { //"hii"
+  let twoDimensionalArray = [];
+  for (let i=0; i<string.length; i++) { //first is "h" (i=0)
+    
+    twoDimensionalArray.forEach(function(element) {
+      if (element[1].includes(string[i])) {
+        console.log("already in the array");
+      } else {
+        twoDimensionalArray.push([1,string[i]]);
+      }
+    })
+    return twoDimensionalArray;
+  }
+};
 
       
 
