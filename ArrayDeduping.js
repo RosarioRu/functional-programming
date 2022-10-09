@@ -26,25 +26,32 @@ function unduplicating(array) {
   return editedArray;
 };
 
-// recursive solution:
-
+// recursive solution: not sure how to do this without a global variable!
+let editedArray = [];
 function unduplicatingRecursive(array) {
-  let editedArray = [];
+  
   if((!Array.isArray(array)) || (array.length === 0)) {
     return "Please enter a valid array.";
   }
   if (array.length === 1) {
     if(editedArray.includes(array[0])) {
-      return;
+      return editedArray;
     } else {
       editedArray.push(array[0]);
       return editedArray;
     }
   } else {
   //recursion below:
-  if (!editedArray.includes(array[0]) {
-    editedArray.push(array[0]);
-    return unduplicatingRecursive(array.slice(1));
+    if (!editedArray.includes(array[0])) {
+      editedArray.push(array[0]);
+      return unduplicatingRecursive(array.slice(1));
+    } else {
+      return unduplicatingRecursive(array.slice(1));
+    }
   }
+};
+
+
+
   
 
