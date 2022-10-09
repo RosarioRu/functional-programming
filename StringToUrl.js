@@ -9,6 +9,7 @@ Input: "Jasmine Ann Jones"
 Output: "Jasmine%20Ann%20Jones"
 */
 
+//non-recursive solution:
 
 function stringToUrl(string) {
   if ((typeof string) !== "string") {
@@ -25,3 +26,21 @@ function stringToUrl(string) {
     return urlString;
   }
 };
+
+//recursive solution:
+
+function stringToUrlRecursive(string) {
+  if (string === "") {
+    return;
+  }
+  if ((typeof string) !== "string") {
+    return "Please enter a valid URL";
+  } else {
+    if(string.substring(0,1) === " " ) {
+      return "%20" + stringToUrlRecursive(string.substring(1));
+    } else {
+      return string.substring(0,1) + stringToUrlRecursive(string.substring(1));
+    }
+  }
+};
+
