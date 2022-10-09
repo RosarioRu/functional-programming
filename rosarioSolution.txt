@@ -1,0 +1,44 @@
+all elements in string unique?
+"hello" -- not unique
+"copyright" -- unique 
+-------------------------------
+input could be empty string, but always a string
+cannot turn it into an array
+javascrip ok
+output should be boolean
+------------------------------------------------
+
+steps and plan: 
+  0. uppercase string
+  1. create a variable using let ==> true
+  2. loop through the elements/characters in the string and determining if they are duplicates
+          (for loop) -- compare the indexOf(character) to index
+			if indexOf(character) !== index ---> not unique, so return false
+			if indexOf(character) === index ---> unique, keep looping through all the rest and if all unique, return variable from step 1. 
+  3. account for an empty string 
+-------------------------------------
+
+function uniqueString(string) { 					//string="Bob" 
+	const str = string.toUpperCase();					
+	if (string === "") {
+		return "Please enter a non-empty string";
+	} else {
+		
+		for (let i=0; i<str.length; i++) {    	//first time: i = 0 ("B") //second time: i=1 ("O")
+			if(str.indexOf(str[i]) !== i) {			
+				return false;
+			}
+		}
+		return true;
+ 	}
+}
+
+let name = "Bob";
+uniqueString(name);
+
+
+	
+
+
+
+
