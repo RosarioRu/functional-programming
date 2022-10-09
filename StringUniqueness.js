@@ -18,7 +18,7 @@ Output: true
           using a for loop 
           if indexOf each character matches the index, then all are unique
           if indexOf ANY character does not match the index, then not unique
-          return boolean
+          return booleans
 */
 
 function uniqueString(string) {
