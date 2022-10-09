@@ -10,12 +10,38 @@ Output: "Jasmine%20Ann%20Jones"
 */
 
 function stringToUrl(string) {
-  
-  for(i = 0; i<names.length; i++) {
-    if (names[i] === " ") {
-      newString.concat("%20");
+
+  let urlString = "";
+
+  for(i = 0; i<string.length; i++) {
+    if (string[i] === " ") {
+      urlString"%20");
     } else {
-      newString.concat(names[i]);
+      urlString.concat(string[i]);
     }
-    return newString;
-  };
+  }
+
+  return urlString;
+
+};
+
+
+function stringToUrl(string) {
+
+  let urlString = "";
+
+  for(i = 0; i<string.length; i++) {
+    if (string[i] === " ") {
+      console.log(urlString);
+      console.log(urlString + "%20");
+      console.log(urlString);
+    } else {
+      console.log(urlString);
+      console.log(urlString + (string[i]));
+      console.log(urlString);
+    }
+  }
+
+  return urlString;
+
+};
