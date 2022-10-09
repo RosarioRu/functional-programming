@@ -45,3 +45,24 @@ function stringToUrl(string) {
   return urlString;
 
 };
+
+//this one below actually saves changes to urlString.
+function stringToUrl(string) {
+
+  let urlString = "";
+
+  for(i = 0; i<string.length; i++) {
+    if (string[i] === " ") {
+      console.log(urlString);
+      urlString += "%20";
+      console.log(urlString);
+    } else {
+      console.log(urlString);
+      urlString += string[i];
+      console.log(urlString);
+    }
+  }
+
+  return urlString;
+
+};
